@@ -7,7 +7,7 @@ import redisConfig from '@libs/redis/redis-config';
 import { TeamsModule } from './teams/teams.module';
 import { TournamentsModule } from './tournaments/tournaments.module';
 import { GamesModule } from './games/games.module';
-import { EventsModule } from './events/events.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -21,7 +21,7 @@ import { EventsModule } from './events/events.module';
     TeamsModule,
     TournamentsModule,
     GamesModule,
-    EventsModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],

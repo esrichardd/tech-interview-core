@@ -5,8 +5,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  ManyToMany,
 } from 'typeorm';
 import { Game } from 'src/games/entites/game.entity';
+import { Group } from 'src/tournaments/entities/group.entity';
 
 @Entity()
 export class Team {
@@ -19,15 +21,18 @@ export class Team {
   @Column()
   name: string;
 
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @ManyToMany(() => Group, (group) => group.teams)
+  groups: Group[];
 
   @OneToMany(() => Game, (game) => game.localTeam)
   localGames: Game[];
 
   @OneToMany(() => Game, (game) => game.visitorTeam)
   visitorGames: Game[];
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
