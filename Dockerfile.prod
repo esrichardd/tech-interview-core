@@ -1,0 +1,16 @@
+FROM node:21
+
+WORKDIR /usr/src/tech-interview-core
+
+COPY . .
+
+RUN yarn install
+
+RUN yarn build
+
+RUN rm -rf ./src
+
+EXPOSE 3001
+
+#yarn start:prod
+CMD ["yarn", "start:prod"]
