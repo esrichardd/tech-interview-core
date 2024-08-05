@@ -47,6 +47,18 @@
       ],
       "@libs/redis/*": [
         "libs/redis/src/*"
+      ],
+      "@libs/event-broker": [
+        "libs/event-broker/src"
+      ],
+      "@libs/event-broker/*": [
+        "libs/event-broker/src/*"
+      ],
+      "@libs/healthcheck": [
+        "libs/healthcheck/src"
+      ],
+      "@libs/healthcheck/*": [
+        "libs/healthcheck/src/*"
       ]
     }
   },

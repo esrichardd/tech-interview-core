@@ -8,6 +8,8 @@ import { TeamsModule } from './teams/teams.module';
 import { TournamentsModule } from './tournaments/tournaments.module';
 import { GamesModule } from './games/games.module';
 import { UsersModule } from './users/users.module';
+import { LoggerModule } from '@libs/logger';
+import { StatusModule } from '@libs/healthcheck/status/status.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { UsersModule } from './users/users.module';
       load: [dbConfig, redisConfig],
       isGlobal: true,
     }),
+    LoggerModule,
+    StatusModule,
     PersistenceModule,
     RedisModule,
     TeamsModule,

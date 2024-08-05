@@ -51,6 +51,24 @@
       "compilerOptions": {
         "tsConfigPath": "libs/redis/tsconfig.lib.json"
       }
+    },
+    "event-broker": {
+      "type": "library",
+      "root": "libs/event-broker",
+      "entryFile": "index",
+      "sourceRoot": "libs/event-broker/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/event-broker/tsconfig.lib.json"
+      }
+    },
+    "healthcheck": {
+      "type": "library",
+      "root": "libs/healthcheck",
+      "entryFile": "index",
+      "sourceRoot": "libs/healthcheck/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/healthcheck/tsconfig.lib.json"
+      }
     }
   }
 }

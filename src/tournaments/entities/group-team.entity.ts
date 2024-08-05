@@ -11,7 +11,7 @@ import { Team } from 'src/teams/entities/team.entity';
 
 @Entity()
 export class GroupTeam {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @ManyToOne(() => Group, (group) => group.id)

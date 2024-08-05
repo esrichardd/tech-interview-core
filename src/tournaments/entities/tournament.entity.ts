@@ -23,12 +23,6 @@ export class Tournament {
   @Column()
   country: string;
 
-  @Column({ type: 'date' })
-  startDate: Date;
-
-  @Column({ type: 'date' })
-  endDate: Date;
-
   @OneToMany(() => Group, (group) => group.tournament)
   groups: Group[];
 

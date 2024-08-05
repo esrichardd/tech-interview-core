@@ -33,6 +33,28 @@ export abstract class AbstractCrudHandler<T> {
     }
   }
 
+  async findWithOptions(options: FindOneOptions<T>): Promise<any[]> {
+    try {
+      const records = await this.abstractRepository.find(options);
+      return records.map((record) => this.mapEntityToDto(record));
+    } catch (error) {
+      this.throwUnhandledError(
+        error,
+        'findWithOptions',
+        'Error finding records',
+      );
+    }
+  }
+
+  async findOne(options: FindOneOptions<T>): Promise<any> {
+    try {
+      const record = await this.abstractRepository.findOne(options);
+      return this.mapEntityToDto(record);
+    } catch (error) {
+      this.throwUnhandledError(error, 'findOne', 'Error finding record');
+    }
+  }
+
   async findById(id: string): Promise<any> {
     try {
       const record = await this.abstractRepository.findOne({
@@ -59,6 +81,16 @@ export abstract class AbstractCrudHandler<T> {
       await this.abstractRepository.delete(id);
     } catch (error) {
       this.throwUnhandledError(error, 'delete', 'Error deleting record');
+    }
+  }
+
+  async createMany(dtos: any[]): Promise<any[]> {
+    try {
+      const entities = dtos.map((dto) => this.mapDtoToEntity(dto));
+      const records = await this.abstractRepository.save(entities);
+      return records.map((record) => this.mapEntityToDto(record));
+    } catch (error) {
+      this.throwUnhandledError(error, 'createMany', 'Error creating records');
     }
   }
 

@@ -10,7 +10,7 @@ import {
 import { Game } from './game.entity';
 
 @Entity()
-export class Event {
+export class GameEvent {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -22,10 +22,10 @@ export class Event {
   type: string;
 
   @Column()
-  minute: number;
+  period: number;
 
-  @Column({ nullable: true })
-  extraMinute: number;
+  @Column()
+  minute: number;
 
   @Column()
   player: string;

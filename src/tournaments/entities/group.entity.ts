@@ -15,8 +15,11 @@ import { Tournament } from './tournament.entity';
 
 @Entity()
 export class Group {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
+  externalId: string;
 
   @Column()
   name: string;

@@ -10,8 +10,8 @@ import { Game } from 'src/games/entites/game.entity';
 
 @Entity()
 export class FavoriteGame {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ManyToOne(() => User, (user) => user.favoriteTournaments)
   @JoinColumn()

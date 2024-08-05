@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
   ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { Game } from 'src/games/entites/game.entity';
 import { Group } from 'src/tournaments/entities/group.entity';
@@ -22,6 +23,7 @@ export class Team {
   name: string;
 
   @ManyToMany(() => Group, (group) => group.teams)
+  @JoinTable()
   groups: Group[];
 
   @OneToMany(() => Game, (game) => game.localTeam)

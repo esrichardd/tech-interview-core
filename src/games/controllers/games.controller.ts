@@ -12,7 +12,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { GamesService } from '../services/games.services';
+import { GamesService } from '../services/games.service';
 
 @ApiTags('Games')
 @Controller('games')
@@ -21,19 +21,17 @@ import { GamesService } from '../services/games.services';
 export class GamesController {
   constructor(private readonly gamesService: GamesService) {}
 
-  @Post()
-  create(@Body() request: any) {
-    return this.gamesService.create(request);
-  }
-
-  @Get()
-  findAll() {
-    return this.gamesService.find();
-  }
-
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.gamesService.findGameWithTeams(id);
+    return this.gamesService.findOne({
+      where: { id },
+      relations: ['tournament', 'localTeam', 'visitorTeam', 'group', 'stage'],
+    });
+  }
+
+  @Get('tournament/:id')
+  findByTournament(@Param('id') id: string) {
+    return this.gamesService.findByTournament(id);
   }
 
   @Patch(':id')
@@ -44,5 +42,15 @@ export class GamesController {
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.gamesService.delete(id);
+  }
+
+  @Post('event')
+  addGameEvent(@Body() request: any) {
+    return this.gamesService.addGameEvent(request);
+  }
+
+  @Get(':id/events')
+  getGameEvents(@Param('id') id: string) {
+    return this.gamesService.getGameEvents(id);
   }
 }

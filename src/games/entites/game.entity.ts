@@ -12,7 +12,7 @@ import { Team } from 'src/teams/entities/team.entity';
 import { Tournament } from 'src/tournaments/entities/tournament.entity';
 import { Group } from 'src/tournaments/entities/group.entity';
 import { Stage } from 'src/tournaments/entities/stage.entity';
-import { Event } from './event.entity';
+import { GameEvent } from './game-event.entity';
 
 @Entity()
 export class Game {
@@ -24,7 +24,7 @@ export class Game {
 
   @ManyToOne(() => Tournament, (tournament) => tournament.games)
   @JoinColumn({ name: 'tournamentId' })
-  tournament: string;
+  tournament: Tournament;
 
   @ManyToOne(() => Team, (team) => team.localGames)
   @JoinColumn({ name: 'localTeamId' })
@@ -42,8 +42,8 @@ export class Game {
   @JoinColumn({ name: 'stageId' })
   stage: Stage;
 
-  @OneToMany(() => Event, (event) => event.game)
-  events: Event[];
+  @OneToMany(() => GameEvent, (event) => event.game)
+  events: GameEvent[];
 
   @Column({ nullable: true })
   localGoals: number;
@@ -51,7 +51,7 @@ export class Game {
   @Column({ nullable: true })
   visitorGoals: number;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'timestamp' })
   date: Date;
 
   @CreateDateColumn()

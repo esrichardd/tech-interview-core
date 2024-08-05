@@ -20,6 +20,12 @@
     "libs/sdk-gateway-dto/(.*)": "<rootDir>/../libs/sdk-gateway-dto/src/$1",
     "libs/sdk-gateway-dto": "<rootDir>/../libs/sdk-gateway-dto/src",
     "libs/redis/(.*)": "<rootDir>/../libs/redis/src/$1",
-    "libs/redis": "<rootDir>/../libs/redis/src"
+    "libs/redis": "<rootDir>/../libs/redis/src",
+    "@libs/queue/(.*)": "<rootDir>/../libs/queue/src/$1",
+    "@libs/queue": "<rootDir>/../libs/queue/src",
+    "@libs/event-broker/(.*)": "<rootDir>/../libs/event-broker/src/$1",
+    "@libs/event-broker": "<rootDir>/../libs/event-broker/src",
+    "@libs/healthcheck/(.*)": "<rootDir>/../libs/healthcheck/src/$1",
+    "@libs/healthcheck": "<rootDir>/../libs/healthcheck/src"
   }
 }

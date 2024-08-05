@@ -13,13 +13,17 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { TournamentsService } from '../services/tournaments.service';
+import { GroupService } from '../services/group.service';
 
 @ApiTags('Tournaments')
 @Controller('tournaments')
 @UsePipes(new ValidationPipe({ transform: true }))
 @UseInterceptors(ClassSerializerInterceptor)
 export class TournamentsController {
-  constructor(private readonly tournamentsService: TournamentsService) {}
+  constructor(
+    private readonly tournamentsService: TournamentsService,
+    private readonly groupService: GroupService,
+  ) {}
 
   @Post()
   create(@Body() request: any) {
@@ -29,6 +33,11 @@ export class TournamentsController {
   @Get()
   findAll() {
     return this.tournamentsService.find();
+  }
+
+  @Get('/groups')
+  async getTournamentWithGroups() {
+    return this.tournamentsService.getTournamentsWithGroups();
   }
 
   @Get(':id')
@@ -44,5 +53,15 @@ export class TournamentsController {
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.tournamentsService.delete(id);
+  }
+
+  @Post('/with-associated-data')
+  async createGroupsWithTeams(@Body() request: any) {
+    return this.tournamentsService.createTournamentWithAssociations(request);
+  }
+
+  @Post('/games')
+  async createGames(@Body() request: any) {
+    return this.tournamentsService.createGames(request);
   }
 }
