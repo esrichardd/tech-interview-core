@@ -10,7 +10,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Team } from 'src/teams/entities/team.entity';
-import { Game } from 'src/games/entites/game.entity';
+import { Game } from 'src/games/entities/game.entity';
 import { Tournament } from './tournament.entity';
 
 @Entity()

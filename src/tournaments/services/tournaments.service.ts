@@ -7,7 +7,7 @@ import { Tournament } from '../entities/tournament.entity';
 import { GroupService } from './group.service';
 import { TeamsService } from 'src/teams/services/teams.service';
 import { GroupTeamService } from './group-team.service';
-import { GamesService } from 'src/games/services/games.services';
+import { GamesService } from 'src/games/services/games.service';
 
 @Injectable()
 export class TournamentsService extends AbstractCrudHandler<Tournament> {

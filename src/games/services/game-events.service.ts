@@ -3,7 +3,7 @@ import { AbstractCrudHandler } from '@libs/utils';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { GameEvent } from '../entites/game-event.entity';
+import { GameEvent } from '../entities/game-event.entity';
 
 @Injectable()
 export class GameEventsService extends AbstractCrudHandler<GameEvent> {

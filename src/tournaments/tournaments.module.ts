@@ -12,9 +12,9 @@ import { GroupTeamService } from './services/group-team.service';
 import { TeamsService } from 'src/teams/services/teams.service';
 import { Team } from 'src/teams/entities/team.entity';
 import { GroupController } from './controllers/groups.controller';
-import { Game } from 'src/games/entites/game.entity';
+import { Game } from 'src/games/entities/game.entity';
 import { GameEventsService } from 'src/games/services/game-events.service';
-import { GameEvent } from 'src/games/entites/game-event.entity';
+import { GameEvent } from 'src/games/entities/game-event.entity';
 import { GamesService } from 'src/games/services/games.service';
 
 @Module({

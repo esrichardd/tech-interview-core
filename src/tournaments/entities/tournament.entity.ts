@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Game } from 'src/games/entites/game.entity';
+import { Game } from 'src/games/entities/game.entity';
 import { Group } from './group.entity';
 
 @Entity()

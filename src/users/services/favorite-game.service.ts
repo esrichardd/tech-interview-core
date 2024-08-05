@@ -1,6 +1,6 @@
 import { AbstractCrudHandler } from '@libs/utils';
 import { Injectable } from '@nestjs/common';
-import { FavoriteGame } from '../entites/favorite-game.entity';
+import { FavoriteGame } from '../entities/favorite-game.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { LoggerService } from '@libs/logger';

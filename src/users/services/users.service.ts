@@ -1,15 +1,15 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { User } from '../entites/user.entity';
+import { User } from '../entities/user.entity';
 import { AbstractCrudHandler } from '@libs/utils';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { LoggerService } from '@libs/logger';
 import { FavoriteGameService } from './favorite-game.service';
-import { GamesService } from 'src/games/services/games.services';
 import { FavoriteTournamentService } from './favorite-tournament.service';
 import { TournamentsService } from 'src/tournaments/services/tournaments.service';
 import { UserResponseDto } from '@libs/sdk-gateway-dto';
 import { plainToInstance } from 'class-transformer';
+import { GamesService } from 'src/games/services/games.service';
 
 @Injectable()
 export class UsersService extends AbstractCrudHandler<User> {

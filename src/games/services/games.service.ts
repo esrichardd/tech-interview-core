@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { AbstractCrudHandler } from '@libs/utils';
 import { LoggerService } from '@libs/logger';
-import { Game } from '../entites/game.entity';
+import { Game } from '../entities/game.entity';
 import { GameEventsService } from './game-events.service';
 
 @Injectable()
