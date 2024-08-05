@@ -26,99 +26,83 @@ tech-interview-core
 │   └── sdk-gateway-dto
 └── Dockerfile
 ```
-
-### Descripción de Módulos
+### Estructura de archivos de los módulos
 
 ### Games
 
-- **Descripción**: Maneja toda la lógica relacionada con los juegos.
-- **Estructura**:
-    - `games.module.ts`: Define el módulo `Games`.
-    - `controllers/games.controller.ts`: Controlador que maneja las rutas y solicitudes relacionadas con los juegos.
-    - `services/games.service.ts`: Servicio que contiene la lógica de negocio para los juegos.
-    - `services/game-events.service.ts`: Servicio que maneja eventos relacionados con los juegos.
-    - `entities/game.entity.ts`: Define la entidad `Game`.
-    - `entities/game-event.entity.ts`: Define la entidad `GameEvent`.
+```
+games
+├── games.module.ts
+├── controllers
+│   └── games.controller.ts
+├── services
+│   ├── games.service.ts
+│   └── game-events.service.ts
+├── entities
+│   └── game.entity.ts
+
+```
+
+- **Descripción**: Maneja la lógica relacionada con los juegos, incluyendo controladores, servicios y entidades.
 
 ### Teams
 
-- **Descripción**: Maneja toda la lógica relacionada con los equipos.
-- **Estructura**:
-    - `teams.module.ts`: Define el módulo `Teams`.
-    - `controllers/teams.controller.ts`: Controlador que maneja las rutas y solicitudes relacionadas con los equipos.
-    - `services/teams.service.ts`: Servicio que contiene la lógica de negocio para los equipos.
-    - `entities/team.entity.ts`: Define la entidad `Team`.
+```
+teams
+├── teams.module.ts
+├── controllers
+│   └── teams.controller.ts
+├── services
+│   └── teams.service.ts
+├── entities
+│   └── team.entity.ts
+
+```
+
+- **Descripción**: Gestiona la lógica de los equipos, controladores, servicios y entidades.
 
 ### Tournaments
 
-- **Descripción**: Maneja toda la lógica relacionada con los torneos.
-- **Estructura**:
-    - `tournaments.module.ts`: Define el módulo `Tournaments`.
-    - `controllers/tournaments.controller.ts`: Controlador que maneja las rutas y solicitudes relacionadas con los torneos.
-    - `controllers/groups.controller.ts`: Controlador que maneja las rutas y solicitudes relacionadas con los grupos.
-    - `services/tournaments.service.ts`: Servicio que contiene la lógica de negocio para los torneos.
-    - `services/groups.service.ts`: Servicio que contiene la lógica de negocio para los grupos.
-    - `entities/tournament.entity.ts`: Define la entidad `Tournament`.
-    - `entities/group.entity.ts`: Define la entidad `Group`.
-    - `entities/group-team.entity.ts`: Define la entidad `GroupTeam`.
-    - `entities/stage.entity.ts`: Define la entidad `Stage`.
-    - `entities/game.entity.ts`: Define la entidad `Game`.
+```
+tournaments
+├── tournaments.module.ts
+├── controllers
+│   ├── tournaments.controller.ts
+│   └── groups.controller.ts
+├── services
+│   ├── tournaments.service.ts
+│   └── groups.service.ts
+├── entities
+│   ├── tournament.entity.ts
+│   ├── group.entity.ts
+│   ├── group-team.entity.ts
+│   ├── stage.entity.ts
+│   └── game.entity.ts
+
+```
+
+- **Descripción**: Maneja la lógica de los torneos, incluyendo controladores, servicios y entidades para torneos y grupos.
 
 ### Users
 
-- **Descripción**: Maneja toda la lógica relacionada con los usuarios.
-- **Estructura**:
-    - `users.module.ts`: Define el módulo `Users`.
-    - `controllers/users.controller.ts`: Controlador que maneja las rutas y solicitudes relacionadas con los usuarios.
-    - `services/users.service.ts`: Servicio que contiene la lógica de negocio para los usuarios.
-    - `services/favorite-game.service.ts`: Servicio que maneja la lógica de los juegos favoritos de los usuarios.
-    - `services/favorite-tournament.service.ts`: Servicio que maneja la lógica de los torneos favoritos de los usuarios.
-    - `entities/user.entity.ts`: Define la entidad `User`.
-    - `entities/favorite-game.entity.ts`: Define la entidad `FavoriteGame`.
-    - `entities/favorite-team.entity.ts`: Define la entidad `FavoriteTeam`.
-    - `entities/favorite-tournament.entity.ts`: Define la entidad `FavoriteTournament`.
+```
+users
+├── users.module.ts
+├── controllers
+│   └── users.controller.ts
+├── services
+│   ├── users.service.ts
+│   ├── favorite-game.service.ts
+│   └── favorite-tournament.service.ts
+├── entities
+│   ├── user.entity.ts
+│   ├── favorite-game.entity.ts
+│   ├── favorite-team.entity.ts
+│   └── favorite-tournament.entity.ts
 
-### Descripción de Librerías
+```
 
-### Utils
-
-- **Descripción**: Contiene utilidades generales y funciones auxiliares que pueden ser reutilizadas en diferentes partes de la aplicación.
-- **Estructura**: Código utilitario compartido.
-
-### Redis
-
-- **Descripción**: Maneja la integración y operaciones relacionadas con Redis.
-- **Estructura**: Código para interactuar con Redis.
-
-### Persistence
-
-- **Descripción**: Contiene la lógica relacionada con la persistencia de datos, como repositorios y configuraciones de bases de datos.
-- **Estructura**: Código para la persistencia de datos.
-
-### Logger
-
-- **Descripción**: Maneja el registro y la gestión de logs en la aplicación.
-- **Estructura**: Código para el manejo de logs.
-
-### Healthcheck
-
-- **Descripción**: Contiene lógica para realizar health checks de la aplicación.
-- **Estructura**: Código para health checks.
-
-### Event-Broker
-
-- **Descripción**: Maneja la lógica relacionada con la mensajería y el broker de eventos.
-- **Estructura**: Código para la mensajería y eventos.
-
-### SDK-Gateway-DTO
-
-- **Descripción**: Contiene los Data Transfer Objects (DTOs) y SDKs para la comunicación con otros servicios.
-- **Estructura**: Código para DTOs y SDKs.
-
-### Dockerfile
-
-- **Descripción**: Archivo de configuración de Docker para construir la imagen de la aplicación.
-- **Estructura**: Instrucciones para construir y configurar el contenedor Docker.
+- **Descripción**: Maneja la lógica relacionada con los usuarios, controladores, servicios y entidades para usuarios y sus favoritos.
 
 ## Inicialización de la Base de Datos
 
